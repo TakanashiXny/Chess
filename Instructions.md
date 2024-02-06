@@ -1,0 +1,21 @@
+For this assignment, you will be implementing a simplified version of chess using the Pygame library. Note that you're not required to implement castling, en passant, or pawn promotion; although, you're free to extend the functionality of the game. The codebase is organized into several Python files, each representing a different component of the game. Here's a brief overview of the structure:
+
+- [`main.py`](command:_github.copilot.openRelativePath?%5B%22main.py%22%5D "main.py"): This is the entry point of the application. It initializes the Pygame library, sets up the game window, and contains the main game loop. The game loop handles events, updates the game state, and redraws the screen.
+
+- [`data/classes/Board.py`](command:_github.copilot.openRelativePath?%5B%22data%2Fclasses%2FBoard.py%22%5D "data/classes/Board.py"): This file defines the [`Board`](command:_github.copilot.openSymbolInFile?%5B%22data%2Fclasses%2FBoard.py%22%2C%22Board%22%5D "data/classes/Board.py") class, which represents the chessboard. It contains methods for setting up the board, handling user clicks, checking if a player is in check or checkmate, and drawing the board.
+
+- [`data/classes/Square.py`](command:_github.copilot.openRelativePath?%5B%22data%2Fclasses%2FSquare.py%22%5D "data/classes/Square.py"): This file defines the [`Square`](command:_github.copilot.openSymbolInFile?%5B%22data%2Fclasses%2FSquare.py%22%2C%22Square%22%5D "data/classes/Square.py") class, which represents a square on the chessboard. It contains attributes like position, color, and the piece occupying it, and a method for drawing the square.
+
+- [`data/classes/Piece.py`](command:_github.copilot.openRelativePath?%5B%22data%2Fclasses%2FPiece.py%22%5D "data/classes/Piece.py"): This file defines the [`Piece`](command:_github.copilot.openSymbolInFile?%5B%22data%2Fclasses%2FPiece.py%22%2C%22Piece%22%5D "data/classes/Piece.py") class, which is the base class for all chess pieces. It contains basic attributes like position and color.
+
+- `data/classes/pieces/*.py`: These files define classes for each type of chess piece (Pawn, Rook, Knight, Bishop, Queen, King). Each class inherits from the [`Piece`](command:_github.copilot.openSymbolInFile?%5B%22data%2Fclasses%2FPiece.py%22%2C%22Piece%22%5D "data/classes/Piece.py") class and may override its methods or add new ones.
+
+- [`requirements.txt`](command:_github.copilot.openRelativePath?%5B%22requirements.txt%22%5D "requirements.txt"): This file lists the Python packages that the project depends on. You can install these packages using pip.
+
+To complete this assignment, you should add your code where the `TODO` comments are placed. These comments indicate parts of the code that need to be implemented for the game to work correctly. Note that the GUI elements of the game have been provided. Your edits are neeed mainly in `data/classes/Piece.py` and `data/classes/pieces/*.py`. Make sure to test your code thoroughly after making changes to ensure the game still works as expected. Note that you're free to modify the existing code or add new files as needed to complete the assignment; that is, you're not limited to the existing structure. Please also ensure that your code is well-documented and follows best practices for code style and organization.
+
+Before running the game, make sure to install the required packages by running `pip3 install -r requirements.txt` in your terminal (you may need to use `pip` as opposed to `pip3`). You can then start the game by running `python main.py`.
+
+To submit, please fill in your README.md and upload your completed code to Canvas. You can also include any additional comments or instructions for running the game in the README file. If you have any questions or need clarification on the requirements, feel free to ask. Good luck!
+
+As a side note, the game is not required to have an AI opponent. However, if you're interested in implementing one, you're welcome to do so. You could use the Minimax algorithm with alpha-beta pruning or reinforcement learning to create a simple AI opponent. This would involve creating a new class for the AI player and implementing methods for evaluating the game state and making moves. This is entirely optional, but it could be a fun challenge if you're up for it.
