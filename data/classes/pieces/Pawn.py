@@ -32,20 +32,26 @@ class Pawn(Piece):
 		"""
 		# TODO: The Pawn can move forward two squares on its first move, and one square on all other moves.
 		output = []
+
+		valid_move = self.get_valid_moves(board)
+		valid_pos = [(each_square.x, each_square.y) for each_square in valid_move]
+
+		if (self.x, self.y - 1) in valid_pos:
+			output.append(board.get_square_from_pos(self.x, self.y - 1))
 		return output
 
 
-	def get_moves(self, board):
-		"""
-		Inputs: board
-		Outputs: list of squares that the pawn can move to
+	# def get_moves(self, board):
+	# 	"""
+	# 	Inputs: board
+	# 	Outputs: list of squares that the pawn can move to
 
-		Overrides the get_moves method in the Piece class. Returns a list of squares that the Pawn can move to.
-		"""
-		# TODO: Gets all moves for the piece. That is, all squares that the piece can move to.
-		# HINT: First get all squares in each direction using get_possible_moves, then filter out the invalid ones.
-		output = []
-		return output
+	# 	Overrides the get_moves method in the Piece class. Returns a list of squares that the Pawn can move to.
+	# 	"""
+	# 	# TODO: Gets all moves for the piece. That is, all squares that the piece can move to.
+	# 	# HINT: First get all squares in each direction using get_possible_moves, then filter out the invalid ones.
+	# 	output = []
+	# 	return output
 
 	def attacking_squares(self, board):
 		"""

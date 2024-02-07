@@ -30,4 +30,20 @@ class Bishop(Piece):
 		"""
 		# TODO: The Bishop can move any number of squares diagonally.
 		output = []
+
+		valid_move = self.get_valid_moves(board)
+		valid_pos = [(each_square.x, each_square.y) for each_square in valid_move]
+		directions = [(-1, 1), (1, 1), (1, -1), (-1, -1)]
+
+		for each_direction in directions:
+			current_direction = []
+			new_x = self.x + each_direction[0]
+			new_y = self.y + each_direction[1]
+
+			while new_x >= 0 and new_x < 8 and new_y >= 0 and new_y < 8:
+				if (new_x, new_y) in valid_pos:
+					current_direction.append(board.get_square_from_pos((new_x, new_y)))
+			
+			output.append(current_direction)
+
 		return output
